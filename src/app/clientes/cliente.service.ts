@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from './cliente';
 import { CLIENTES } from './clientes.json';
+import { of,Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,5 +9,5 @@ import { CLIENTES } from './clientes.json';
 export class ClienteService {
 
   constructor() { }
-  getClientes(): Cliente[] { return CLIENTES; }
+  getClientes(): Observable<Cliente[]> { return of(CLIENTES); }
 }
